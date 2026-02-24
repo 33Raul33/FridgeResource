@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green-dark: #1a3d15;
+  --color-green-primary: #2D5A27;
+  --color-green-light: #4a8c42;
+  --color-green-muted: #e8f5e3;
+  --color-orange-primary: #FF8C42;
+  --color-orange-dark: #e67830;
+  --color-cream: #fafaf7;
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  margin: 0; padding: 0; min-height: 100vh;
+}
+
+/* Tag pop-in animation */
+@keyframes tagPop {
+  0%   { transform: scale(0.4) rotate(-6deg); opacity: 0; }
+  70%  { transform: scale(1.12) rotate(1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+.tag-enter { animation: tagPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* Card slide-up */
+@keyframes cardSlideUp {
+  0%   { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.card-enter { animation: cardSlideUp 0.5s ease-out forwards; }
+
+/* Skeleton shimmer (normal) */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #e2e8e0 25%, #f0f5ee 50%, #e2e8e0 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+/* Skeleton shimmer (panic) */
+.shimmer-panic {
+  background: linear-gradient(90deg, #3d1a1a 25%, #5a2727 50%, #3d1a1a 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* Pulse ring for panic button */
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  70%  { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: rgba(255,60,60,0.5);
+  animation: pulseRing 1.4s ease-out infinite;
+}
+
+/* Floating bounce (panic button) */
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+.float-bounce { animation: floatBounce 2.5s ease-in-out infinite; }
+
+/* Theme transitions */
+.panic-bg { transition: background-color 0.6s ease, color 0.6s ease; }
+
+/* Quick ingredient button */
+.quick-btn { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.quick-btn:hover { transform: translateY(-3px) scale(1.07); }
+
+/* Recipe card hover */
+.recipe-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px -8px rgba(45,90,39,0.18);
+}
+
+/* Input focus glow */
+.ingredient-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45,90,39,0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c0d4bb; border-radius: 3px; }
+
+/* Toast progress bar */
+@keyframes toastProgress {
+  0%   { width: 100%; }
+  100% { width: 0%; }
+}
