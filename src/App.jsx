@@ -102,7 +102,7 @@ export default function App() {
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs mb-4 bg-green-100 text-green-700"
                             style={{ fontWeight: 500 }}>
                             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                            Chef Michelin · Powered by Gemini 2.0 Flash
+                            Chef Michelin · Powered by Gemini 2.0 Flash Lite
                         </div>
                     )}
                     <h2 className={`text-4xl md:text-5xl leading-tight mb-3 transition-colors duration-600 ${panicMode ? 'text-red-400' : 'text-gray-900'
