@@ -102,7 +102,7 @@ export default function App() {
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs mb-4 bg-green-100 text-green-700"
                             style={{ fontWeight: 500 }}>
                             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                            Chef Michelin · Powered by GPT-4o
+                            Chef Michelin · Powered by Gemini 1.5 Flash
                         </div>
                     )}
                     <h2 className={`text-4xl md:text-5xl leading-tight mb-3 transition-colors duration-600 ${panicMode ? 'text-red-400' : 'text-gray-900'
@@ -119,8 +119,8 @@ export default function App() {
 
                 {/* ── Input card ── */}
                 <section className={`rounded-3xl border p-5 md:p-7 mb-6 shadow-sm transition-colors duration-600 ${panicMode
-                        ? 'bg-gray-900 border-red-900/30 shadow-red-950/50'
-                        : 'bg-white border-gray-100 shadow-gray-100'
+                    ? 'bg-gray-900 border-red-900/30 shadow-red-950/50'
+                    : 'bg-white border-gray-100 shadow-gray-100'
                     }`} aria-label="Añadir ingredientes">
 
                     {/* Label row with ingredient count + Limpiar todo */}
@@ -131,8 +131,8 @@ export default function App() {
                         </label>
                         <div className="flex items-center gap-2">
                             <span className={`text-xs px-2 py-0.5 rounded-full transition-colors duration-200 ${ingredients.length >= 2
-                                    ? panicMode ? 'bg-red-900/40 text-red-400' : 'bg-green-100 text-green-700'
-                                    : panicMode ? 'bg-gray-800 text-gray-500' : 'bg-gray-100 text-gray-400'
+                                ? panicMode ? 'bg-red-900/40 text-red-400' : 'bg-green-100 text-green-700'
+                                : panicMode ? 'bg-gray-800 text-gray-500' : 'bg-gray-100 text-gray-400'
                                 }`}>
                                 {ingredients.length} {ingredients.length === 1 ? 'ingrediente' : 'ingredientes'}
                                 {ingredients.length < 2 && ' (mín. 2)'}
@@ -142,8 +142,8 @@ export default function App() {
                                     id="clear-all-btn"
                                     onClick={handleClearAll}
                                     className={`text-xs px-2.5 py-1 rounded-full border cursor-pointer transition-all duration-200 hover:scale-105 ${panicMode
-                                            ? 'border-gray-700 text-gray-500 hover:border-red-700 hover:text-red-400'
-                                            : 'border-gray-200 text-gray-400 hover:border-red-300 hover:text-red-500'
+                                        ? 'border-gray-700 text-gray-500 hover:border-red-700 hover:text-red-400'
+                                        : 'border-gray-200 text-gray-400 hover:border-red-300 hover:text-red-500'
                                         }`}
                                     aria-label="Limpiar todos los ingredientes"
                                 >
@@ -157,8 +157,8 @@ export default function App() {
 
                     {error && (
                         <div className={`mt-4 flex items-start gap-2 text-sm rounded-xl px-4 py-3 border ${panicMode
-                                ? 'text-red-300 bg-red-950/40 border-red-900/40'
-                                : 'text-red-600 bg-red-50 border-red-100'
+                            ? 'text-red-300 bg-red-950/40 border-red-900/40'
+                            : 'text-red-600 bg-red-50 border-red-100'
                             }`}>
                             <span className="flex-shrink-0">⚠️</span>
                             <span>{error}</span>
@@ -216,8 +216,8 @@ export default function App() {
                                 <button
                                     onClick={handleReset}
                                     className={`text-sm px-4 py-2 rounded-xl border cursor-pointer transition-all duration-200 hover:scale-105 ${panicMode
-                                            ? 'border-gray-700 text-gray-400 hover:border-red-700 hover:text-red-400'
-                                            : 'border-gray-200 text-gray-500 hover:border-green-400 hover:text-green-700'
+                                        ? 'border-gray-700 text-gray-400 hover:border-red-700 hover:text-red-400'
+                                        : 'border-gray-200 text-gray-500 hover:border-green-400 hover:text-green-700'
                                         }`}
                                 >↩ Volver a empezar</button>
                             </div>
